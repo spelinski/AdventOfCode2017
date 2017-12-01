@@ -1,21 +1,24 @@
-import argparse
-
-def solve(captcha_string):
-    list_of_ints = [ int(x) for x in captcha_string]
-    return add_matching_items(list_of_ints)
+def get_list_of_numbers(captcha_string):
+    return [int(x) for x in captcha_string]
 
 
-def add_matching_items(list_of_ints):
+def add_matching_items(list_of_ints, distance_of_compare):
     total = 0
-    for index,value in enumerate(list_of_ints,start=0):
-        compare_index = 0 if index == (len(list_of_ints)-1) else index+1
+    for index, value in enumerate(list_of_ints, start=0):
+        compare_index = (index + distance_of_compare) % len(list_of_ints)
         if value == list_of_ints[compare_index]:
             total += value
     return total
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Process a captcha')
-    parser.add_argument('captcha_string', metavar="captcha", nargs=1, help='A captcha to process')
-    args = parser.parse_args()
-    print(solve(args.captcha_string))
+def solve(captcha_string, distance_of_compare):
+    list_of_ints = get_list_of_numbers(captcha_string)
+    return add_matching_items(list_of_ints, distance_of_compare)
+
+
+def solve_adjacent(captcha_string):
+    return solve(captcha_string, 1)
+
+
+def solve_halfway_length_forward(captcha_string):
+    return solve(captcha_string, len(captcha_string)/2)
