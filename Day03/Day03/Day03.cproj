@@ -27,11 +27,9 @@
     <SourceDirectory>.</SourceDirectory>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="EmptyCppSourceFile.cpp" />
     <Compile Include="Test\TestPathFinding.cpp" />
-    <Compile Include="PathFinder\PathFinder.cpp" />
-    <Compile Include="GridBuilder\GridBuilder.cpp" />
     <Compile Include="Test\TestGridBuilder.cpp" />
+    <Compile Include="Challenge.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Test\" />
@@ -40,5 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Test\acutest.h" />
+    <None Include="GridBuilder\GridBuilder.h" />
+    <None Include="PathFinder\PathFinder.h" />
   </ItemGroup>
 </Project>
