@@ -13,6 +13,20 @@ int main(){
 		myGrid = createNextGrid(myGrid);
 	}
 	int numSteps = findDistance(myGrid, 325489);
-	std::cout << std::endl << numSteps << std::endl;
+	std::cout << std::endl << "First Challenge: " << numSteps << std::endl;
+
+
+	std::deque<std::deque<int>> mySumGrid = createFirstGrid();
+	int result = createNextSumGrid(mySumGrid,325489);
+	while(result == -1)
+	{
+		result = createNextSumGrid(mySumGrid,325489);
+	}
+
+	std::cout << std::endl << "Second Challenge: " << result << std::endl;
+
+
+
+
 	return 0;
 }
