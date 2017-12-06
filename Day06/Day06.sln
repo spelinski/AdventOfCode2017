@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day06", "Day06\Day06.csproj", "{0F494D3B-53D6-42DB-B374-B9EAE579BF43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testInfiniteLoop", "testInfiniteLoop\testInfiniteLoop.csproj", "{DF00F6B9-8102-4555-8384-D6E0765737E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infiniteLoopFinder", "infiniteLoopFinder\infiniteLoopFinder.csproj", "{A12FF6A2-F7BD-4A23-BE0D-F984C6B4675A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F494D3B-53D6-42DB-B374-B9EAE579BF43}.Debug|x86.ActiveCfg = Debug|x86
+		{0F494D3B-53D6-42DB-B374-B9EAE579BF43}.Debug|x86.Build.0 = Debug|x86
+		{0F494D3B-53D6-42DB-B374-B9EAE579BF43}.Release|x86.ActiveCfg = Release|x86
+		{0F494D3B-53D6-42DB-B374-B9EAE579BF43}.Release|x86.Build.0 = Release|x86
+		{A12FF6A2-F7BD-4A23-BE0D-F984C6B4675A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A12FF6A2-F7BD-4A23-BE0D-F984C6B4675A}.Debug|x86.Build.0 = Debug|Any CPU
+		{A12FF6A2-F7BD-4A23-BE0D-F984C6B4675A}.Release|x86.ActiveCfg = Release|Any CPU
+		{A12FF6A2-F7BD-4A23-BE0D-F984C6B4675A}.Release|x86.Build.0 = Release|Any CPU
+		{DF00F6B9-8102-4555-8384-D6E0765737E3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DF00F6B9-8102-4555-8384-D6E0765737E3}.Debug|x86.Build.0 = Debug|Any CPU
+		{DF00F6B9-8102-4555-8384-D6E0765737E3}.Release|x86.ActiveCfg = Release|Any CPU
+		{DF00F6B9-8102-4555-8384-D6E0765737E3}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
