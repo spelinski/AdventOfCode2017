@@ -37,4 +37,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\infiniteLoopFinder\infiniteLoopFinder.csproj">
+      <Project>{A12FF6A2-F7BD-4A23-BE0D-F984C6B4675A}</Project>
+      <Name>infiniteLoopFinder</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
