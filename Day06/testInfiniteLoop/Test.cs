@@ -20,8 +20,16 @@ namespace testInfiniteLoop
 		public void fiveStepsToInfinite()
 		{
 			LoopFinder myLoopFinder = new LoopFinder(new List<int>(){0,2,7,0});
-			int stepsToInfinite = myLoopFinder.FindInfinite ();
-			Assert.AreEqual (5,stepsToInfinite);
+			Tuple<int,int> stepsToInfinite = myLoopFinder.FindInfinite ();
+			Assert.AreEqual (5,stepsToInfinite.Item1);
+		}
+
+		[Test ()]
+		public void sizeFourInfiniteLoop()
+		{
+			LoopFinder myLoopFinder = new LoopFinder(new List<int>(){0,2,7,0});
+			Tuple<int,int> stepsToInfinite = myLoopFinder.FindInfinite ();
+			Assert.AreEqual (4,stepsToInfinite.Item2);
 		}
 	}
 }

@@ -10,8 +10,6 @@ namespace infiniteLoopFinder
 		{
 			
 			memoryBanks = memory;
-			memoryBanks.ForEach (Console.WriteLine);
-			Console.WriteLine ("gap");
 			seenStates = new List<List<int>> ();
 			seenStates.Add (new List<int> (memoryBanks));
 		}
@@ -37,39 +35,40 @@ namespace infiniteLoopFinder
 			return memoryBanks;
 		}
 
-		private bool duplicateDetected()
+		private bool duplicateDetected(List<int> latestState)
 		{
-			for (int i = 0; i < seenStates.Count; i++) {
-				for (int j = i + 1; j < seenStates.Count; j++) {
-					if (seenStates [i] == seenStates [j]) {
-						return true;
-					}
+			foreach (List<int> oldState in seenStates) {
+				if (oldState.SequenceEqual(latestState)) {
+					return true;
 				}
 			}
 			return false;
 		}
 
-		public int FindInfinite()
+		public Tuple<int,int> FindInfinite()
 		{
 			int steps = 0;
 			int loops = 0;
-			while (!duplicateDetected ()) {
+			while (true) {
 				steps++;
-				seenStates.Add (new List<int> (NextPass()));
-				if (loops % 1000 == 0) {
+				List<int> tempBanks = new List<int> (NextPass ());
+				if (duplicateDetected (tempBanks)) {
+					int indexOfFirst = 0;
+					for (int i = 0; i < seenStates.Count; i++) {
+						if (seenStates [i].SequenceEqual (tempBanks)) {
+							indexOfFirst = i;
+							break;
+						}
+					}
+					int sizeOfLoop = seenStates.Count - indexOfFirst;
+					return Tuple.Create(steps,sizeOfLoop);
+				}
+				seenStates.Add (new List<int> (tempBanks));
+				if (loops%1000 == 0) {
 					Console.WriteLine (loops);
 				}
 				loops++;
 			}
-			for(int i=0; i < seenStates.Count; i++)
-			{
-				for (int j=0; j < seenStates[i].Count; j++)
-				{
-					Console.Write(seenStates[i][j]);
-				}
-				Console.WriteLine ("");
-			}
-			return steps;
 		}
 	}
 }

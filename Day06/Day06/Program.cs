@@ -14,9 +14,11 @@ namespace Day06
 			if ((line = file.ReadLine ()) != null) {
 				List<int> banks = Regex.Split (line, @"\s+").Select(int.Parse).ToList();
 				LoopFinder myLoopFinder = new LoopFinder(banks);
-				int stepsToInfinite = myLoopFinder.FindInfinite ();
+				Tuple<int,int> stepsToInfinite = myLoopFinder.FindInfinite ();
 				Console.WriteLine ("Challenge One");
-				Console.WriteLine (stepsToInfinite);
+				Console.WriteLine (stepsToInfinite.Item1);
+				Console.WriteLine ("Challenge Two");
+				Console.WriteLine (stepsToInfinite.Item2);
 
 			}
 			file.Close ();
