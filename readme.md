@@ -5,3 +5,4 @@ Day03: C++
 Day04: D
 Looping back through this time C++ will be replaced by RUST
 Day05: Python
+Day06: C#
